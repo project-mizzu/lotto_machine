@@ -1,0 +1,714 @@
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+}
+/* display-center */
+.display-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+}
+.wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 45rem;
+  margin-top: 2rem;
+}
+h1 {
+  color: #fff;
+  text-transform: uppercase;
+}
+.number-box-wrap {
+  width: 35rem;
+  height: 5rem;
+}
+.number-box {
+  display: flex;
+  align-items: center;
+  width: 35rem;
+}
+.number-box .lotto-box {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 5rem;
+  position: relative;
+  border: 0.01rem solid rgba(255, 255, 255, 0.5);
+  background-color: #000;
+  overflow: hidden;
+  box-shadow: inset -0.1rem -0.2rem 0.7rem rgba(255, 255, 255, 0.3);
+}
+.number-box .lotto-box::after {
+  width: 3rem;
+  height: 1rem;
+  border-radius: 1rem;
+  position: absolute;
+  bottom: -0.7rem;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: rotate(-20deg);
+  filter: blur(6px);
+  content: '';
+}
+.number-box .lotto-box::before {
+  width: 1.5rem;
+  height: 1.3rem;
+  border-radius: 1rem;
+  position: absolute;
+  top: 1rem;
+  left: 0.9rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: rotate(-30deg);
+  filter: blur(4px);
+  content: '';
+}
+.number-box .bonus {
+  background: linear-gradient(to bottom right, #e7d37a, #e99efc, #cffdf5);
+}
+.number-box .lotto-number {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 2.5rem;
+  font-weight: bold;
+  border-top: 0.05rem solid #fff;
+  border-left: 0.05rem solid #fff;
+  background-color: rgb(240, 240, 240);
+  color: rgb(75, 75, 75);
+}
+
+.lotto-machine-wrap {
+  width: 22rem;
+  height: 30rem;
+  position: relative;
+}
+.lotto-machine-top {
+  width: 20rem;
+  height: 20rem;
+  position: absolute;
+  left: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 30rem;
+  background: linear-gradient(
+    150deg,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.5)
+  );
+  box-shadow: inset -0.1rem -0.2rem 1rem rgba(255, 255, 255, 0.5);
+  z-index: 2;
+}
+.lotto-machine-top::before {
+  width: 10rem;
+  height: 2rem;
+  position: absolute;
+  top: -0.25rem;
+  left: 5rem;
+  border: 0.05rem solid rgb(255, 164, 164);
+  border-bottom: 0.05rem solid rgb(179, 63, 63);
+  border-radius: 50% / 25%;
+  background: linear-gradient(
+    90deg,
+    rgb(255, 153, 143),
+    red 30%,
+    rgb(163, 38, 38),
+    rgb(99, 15, 15),
+    rgb(179, 32, 32),
+    red
+  );
+  z-index: 5;
+  content: '';
+}
+.lotto-machine-top::after {
+  width: 9.4rem;
+  height: 0.7rem;
+  position: absolute;
+  top: -0.18rem;
+  left: 5.3rem;
+  border: 0.05rem solid rgb(255, 209, 209);
+  border-radius: 50%;
+  background: linear-gradient(180deg, rgb(255, 155, 155) 30%, rgb(190, 48, 48));
+  z-index: 6;
+  content: '';
+}
+.lotto-machine-top-inner {
+  width: 19rem;
+  height: 19rem;
+  margin: 0 auto;
+  position: absolute;
+  top: 0.44rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.lotto-machine-top-inner .lotto-ball {
+  width: 4.5rem;
+  height: 4.5rem;
+  position: absolute;
+  bottom: 0;
+  left: 7rem;
+  border-radius: 50%;
+  border: 0.01rem solid rgba(255, 255, 255, 0.5);
+  background-color: #000;
+  overflow: hidden;
+  box-shadow: inset -0.1rem -0.2rem 0.7rem rgba(255, 255, 255, 0.3);
+}
+.lotto-machine-top-inner .lotto-ball::after {
+  width: 3rem;
+  height: 1rem;
+  border-radius: 1rem;
+  position: absolute;
+  bottom: -0.7rem;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: rotate(-20deg);
+  filter: blur(6px);
+  content: '';
+}
+.lotto-machine-top-inner .lotto-ball::before {
+  width: 1.5rem;
+  height: 1.3rem;
+  border-radius: 1rem;
+  position: absolute;
+  top: 1rem;
+  left: 0.9rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  transform: rotate(-30deg);
+  filter: blur(4px);
+  content: '';
+}
+
+.lotto-machine-top-inner .lotto-ball:nth-child(1) {
+  left: 8rem;
+  background: linear-gradient(to bottom right, #f8bb3b, #f0a202);
+}
+.lotto-machine-top-inner .lotto-ball:nth-child(2) {
+  bottom: 0.3rem;
+  left: 5rem;
+  background: linear-gradient(to bottom right, #79b1e7, #287ad0);
+}
+.lotto-machine-top-inner .lotto-ball:nth-child(3) {
+  bottom: 2.4rem;
+  left: 12.5rem;
+  background: linear-gradient(to bottom right, #fb5941, #f5331f);
+}
+.lotto-machine-top-inner .lotto-ball:nth-child(4) {
+  bottom: 2.3rem;
+  left: 2rem;
+  background: linear-gradient(to bottom right, #707271, #4f4f4f);
+}
+.lotto-machine-top-inner .lotto-ball:nth-child(5) {
+  bottom: 3.2rem;
+  left: 5rem;
+  background: linear-gradient(to bottom right, #8ccc63, #4d9303);
+}
+.lotto-machine-top-inner .lotto-ball:nth-child(6) {
+  bottom: 0.5rem;
+  left: 10rem;
+  background: linear-gradient(to bottom right, #e7d37a, #e99efc, #cffdf5);
+}
+
+.ballAni1 {
+  animation: ballAni1 0.75s ease-in 4;
+}
+.ballAni2 {
+  animation: ballAni2 0.8s ease-in 4;
+}
+.ballAni3 {
+  animation: ballAni3 0.8s ease-in 4;
+}
+.ballAni4 {
+  animation: ballAni4 0.75s ease-in 4;
+}
+.ballAni5 {
+  animation: ballAni5 0.8s ease-in 4;
+}
+.ballAni6 {
+  animation: ballAni6 0.75s ease-in 4;
+}
+
+@keyframes ballAni1 {
+  0% {
+    bottom: 0rem;
+    left: 8rem;
+  }
+  20% {
+    bottom: 2.5rem;
+    left: 3.5rem;
+  }
+  40% {
+    bottom: 8rem;
+    left: 2rem;
+  }
+  70% {
+    bottom: 13rem;
+    left: 10rem;
+  }
+  90% {
+    bottom: 6rem;
+    left: 13.5rem;
+  }
+  100% {
+    bottom: 0rem;
+    left: 8rem;
+  }
+}
+@keyframes ballAni2 {
+  0% {
+    bottom: 0.3rem;
+    left: 5rem;
+  }
+  10% {
+    bottom: 2rem;
+    left: 9rem;
+  }
+  40% {
+    bottom: 7rem;
+    left: 13rem;
+  }
+  60% {
+    bottom: 8rem;
+    left: 10rem;
+  }
+  80% {
+    bottom: 10rem;
+    left: 6rem;
+  }
+  100% {
+    bottom: 0.3rem;
+    left: 5rem;
+  }
+}
+@keyframes ballAni3 {
+  0% {
+    bottom: 2.4rem;
+    left: 12.5rem;
+  }
+  10% {
+    bottom: 1rem;
+    left: 8.5rem;
+  }
+  30% {
+    bottom: 8rem;
+    left: 1.2rem;
+  }
+  50% {
+    bottom: 11rem;
+    left: 3.2rem;
+  }
+  70% {
+    bottom: 12.8rem;
+    left: 10rem;
+  }
+  90% {
+    bottom: 4rem;
+    left: 12rem;
+  }
+  100% {
+    bottom: 2.4rem;
+    left: 12.5rem;
+  }
+}
+@keyframes ballAni4 {
+  0% {
+    bottom: 2.3rem;
+    left: 2rem;
+  }
+  10% {
+    bottom: 1.5rem;
+    left: 3rem;
+  }
+  20% {
+    bottom: 1rem;
+    left: 6rem;
+  }
+  30% {
+    bottom: 3rem;
+    left: 9rem;
+  }
+  40% {
+    bottom: 5rem;
+    left: 12rem;
+  }
+  50% {
+    bottom: 8rem;
+    left: 13em;
+  }
+  60% {
+    bottom: 9rem;
+    left: 11rem;
+  }
+  70% {
+    bottom: 8rem;
+    left: 9rem;
+  }
+  80% {
+    bottom: 7rem;
+    left: 7rem;
+  }
+  90% {
+    bottom: 3rem;
+    left: 6rem;
+  }
+  100% {
+    bottom: 2.3rem;
+    left: 2rem;
+  }
+}
+@keyframes ballAni5 {
+  0% {
+    bottom: 3.2rem;
+    left: 5rem;
+  }
+  10% {
+    bottom: 7rem;
+    left: 2rem;
+  }
+  20% {
+    bottom: 10rem;
+    left: 1rem;
+  }
+  30% {
+    bottom: 12rem;
+    left: 2rem;
+  }
+  40% {
+    bottom: 13rem;
+    left: 4rem;
+  }
+  50% {
+    bottom: 13.5rem;
+    left: 8rem;
+  }
+  60% {
+    bottom: 13rem;
+    left: 11rem;
+  }
+  70% {
+    bottom: 8rem;
+    left: 12rem;
+  }
+  80% {
+    bottom: 5rem;
+    left: 13rem;
+  }
+  90% {
+    bottom: 3rem;
+    left: 6rem;
+  }
+  100% {
+    bottom: 3.2rem;
+    left: 5rem;
+  }
+}
+@keyframes ballAni6 {
+  0% {
+    bottom: 0.5rem;
+    left: 10rem;
+  }
+  10% {
+    bottom: 2rem;
+    left: 12rem;
+  }
+  20% {
+    bottom: 5rem;
+    left: 13.8rem;
+  }
+  30% {
+    bottom: 8rem;
+    left: 14rem;
+  }
+  40% {
+    bottom: 12rem;
+    left: 12rem;
+  }
+  50% {
+    bottom: 14rem;
+    left: 10rem;
+  }
+  60% {
+    bottom: 12rem;
+    left: 5rem;
+  }
+  70% {
+    bottom: 10rem;
+    left: 2rem;
+  }
+  80% {
+    bottom: 8rem;
+    left: 0rem;
+  }
+  90% {
+    bottom: 3rem;
+    left: 2rem;
+  }
+  100% {
+    bottom: 0.5rem;
+    left: 10rem;
+  }
+}
+
+.lotto-machine-mid {
+  width: 15rem;
+  height: 10rem;
+  position: absolute;
+  top: 18rem;
+  left: 3.4rem;
+  border: 0.05rem solid rgb(255, 178, 178);
+  border-radius: 46% / 25%;
+  background: linear-gradient(
+    90deg,
+    rgb(255, 153, 143),
+    red 30%,
+    rgb(163, 38, 38),
+    rgb(99, 15, 15),
+    rgb(179, 32, 32),
+    red
+  );
+  z-index: 1;
+}
+.lotto-machine-mid::after {
+  width: 10rem;
+  height: 3rem;
+  position: absolute;
+  top: 0;
+  left: 2.6rem;
+  border: 0.05rem solid rgb(133, 93, 93);
+  border-radius: 50%;
+  background: linear-gradient(
+    180deg,
+    rgb(29, 1, 1),
+    rgb(61, 14, 14),
+    rgb(29, 1, 1)
+  );
+  content: '';
+}
+.lotto-machine-mid::before {
+  width: 12rem;
+  height: 3rem;
+  position: absolute;
+  top: 0;
+  left: 1.5rem;
+  border: 0.05rem solid rgb(247, 167, 167);
+  border-radius: 50%;
+  background-color: #bc6670;
+  background: linear-gradient(180deg, rgb(116, 54, 54) 30%, rgb(61, 10, 10));
+  content: '';
+}
+.lotto-machine-bottom {
+  width: 18rem;
+  height: 7rem;
+  position: absolute;
+  top: 22.8rem;
+  left: 1.9rem;
+  border: 0.05rem solid rgb(255, 178, 178);
+  border-radius: 50%;
+  background: linear-gradient(
+    40deg,
+    rgb(255, 153, 143),
+    rgb(255, 110, 110),
+    red,
+    rgb(179, 32, 32),
+    rgb(99, 15, 15),
+    rgb(163, 38, 38),
+    rgb(179, 32, 32),
+    red
+  );
+}
+
+.random-btn {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 6rem;
+  border: 0.03rem solid rgb(237, 223, 201);
+  background: linear-gradient(
+    100deg,
+    rgb(242, 240, 236),
+    rgb(132, 132, 132),
+    rgb(51, 49, 42),
+    rgb(116, 112, 100)
+  );
+  position: absolute;
+  top: 22.8rem;
+  left: 9rem;
+  font-weight: bold;
+  z-index: 2;
+}
+.random-btn::before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto;
+  border-top: 0.05rem solid #fff;
+  border-left: 0.05rem solid #fff;
+  border-radius: 3rem;
+  position: absolute;
+  top: 0.45rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    130deg,
+    rgb(240, 240, 240),
+    rgb(242, 242, 242) 50%,
+    rgb(175, 175, 175),
+    rgb(240, 240, 240)
+  );
+  font-size: 0.7rem;
+  color: rgb(50, 50, 50);
+  content: 'PUSH';
+}
+.random-btn:hover {
+  animation: btnHover 0.75s ease-in-out infinite;
+}
+
+@keyframes btnHover {
+  0% {
+    background: linear-gradient(
+      0,
+      #cbf774,
+      #cbf774,
+      #f98a61,
+      #446ded
+    );
+  }
+  10% {
+    background: linear-gradient(
+      36deg,
+      #cbf774,
+      #cbf774,
+      #f98a61,
+      #446ded
+    );
+  }
+  20% {
+    background: linear-gradient(
+      72deg,
+      #cbf774,
+      #cbf774,
+      #f98a61,
+      #446ded
+    );
+  }
+  30% {
+    background: linear-gradient(
+      108deg,
+      #cbf774,
+      #cbf774,
+      #f98a61,
+      #446ded
+    );
+  }
+  40% {
+    background: linear-gradient(
+      144deg,
+      #cbf774,
+      #cbf774,
+      #f98a61,
+      #446ded
+    );
+  }
+  50% {
+    background: linear-gradient(
+      180deg,
+      #cbf774,
+      #cbf774,
+      #f98a61,
+      #446ded
+    );
+  }
+  60% {
+    background: linear-gradient(
+      216deg,
+      #cbf774,
+      #cbf774,
+      #f98a61,
+      #446ded
+    );
+  }
+  70% {
+    background: linear-gradient(
+      252deg,
+      #cbf774,
+      #cbf774,
+      #f98a61,
+      #446ded
+    );
+  }
+  80% {
+    background: linear-gradient(
+      288deg,
+      #cbf774,
+      #cbf774,
+      #f98a61,
+      #446ded
+    );
+  }
+  90% {
+    background: linear-gradient(
+      324deg,
+      #cbf774,
+      #cbf774,
+      #f98a61,
+      #446ded
+    );
+  }
+  100% {
+    background: linear-gradient(
+      360deg,
+      #cbf774,
+      #cbf774,
+      #f98a61,
+      #446ded
+    );
+  }
+}
+
+@media (max-width: 600px) {
+  .wrap {
+    width: 25rem;
+    height: 50rem;
+  }
+  h1 {
+    font-size: 1.6rem;
+    padding: 1rem 0;
+  }
+  .number-box-wrap {
+    width: 18rem;
+    height: 12rem;
+  }
+  .number-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 35rem;
+  }
+  .number-box .lotto-box {
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: 1rem;
+    border-radius: 5rem;
+    position: relative;
+    border: 0.01rem solid rgba(255, 255, 255, 0.5);
+    background-color: #000;
+    overflow: hidden;
+    box-shadow: inset -0.1rem -0.2rem 0.7rem rgba(255, 255, 255, 0.3);
+  }
+}
